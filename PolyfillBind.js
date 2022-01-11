@@ -1,3 +1,4 @@
+// Browser Bind Method
 let name = {
     firstName: "Shivam",
     lastName: "Sagar"
@@ -9,6 +10,8 @@ let printMyName = function (city, country) {
 
 let sayMyName = printMyName.bind(name, "Amritsar")
 sayMyName("India")
+
+// Custom Bind Method
 
 Function.prototype.customBind = function(firstObj, ...args) {
     let obj = this
