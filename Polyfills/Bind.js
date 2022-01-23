@@ -20,5 +20,13 @@ Function.prototype.customBind = function(firstObj, ...args) {
     }
 }
 
+Function.prototype.customBind = function(scope, ...args) {
+    scope.self = this
+    return function(...args2) {
+        let ar = [...args, ...args2]
+        scope.self(...ar)
+    }
+}
+
 let sayMyName2 = printMyName.customBind(name, "Amritsar")
 sayMyName2("India")
